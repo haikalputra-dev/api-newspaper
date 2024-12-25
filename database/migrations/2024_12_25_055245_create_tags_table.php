@@ -9,9 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        //
+        Schema::create('tags', function (Blueprint $table) {
+            $table->bigIncrements('tag_id');
+            $table->string('name', 255);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('tags');
     }
 };
