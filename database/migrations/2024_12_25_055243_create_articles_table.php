@@ -22,14 +22,15 @@ return new class extends Migration
             $table->timestamps();
 
             // Foreign Keys
-            $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('author_id')->nullable();
             $table->foreign('author_id')->references('user_id')->on('users')->onDelete('cascade');
-
-            $table->unsignedBigInteger('tag_id');
+            
+            $table->unsignedBigInteger('tag_id')->nullable();
             $table->foreign('tag_id')->references('tag_id')->on('tags')->onDelete('cascade');
-
-            $table->unsignedBigInteger('category_id');
+            
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('cascade');
+            
         });
     }
 

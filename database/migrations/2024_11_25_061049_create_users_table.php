@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('full_name', 255)->nullable();
             $table->text('bio')->nullable();
             $table->string('profile_image_url', 255)->nullable();
-            $table->enum('role', ['admin', 'user'])->default('user');
+            $table->enum('role', ['admin', 'user','author'])->default('user');
             $table->timestamps();
         });
     }

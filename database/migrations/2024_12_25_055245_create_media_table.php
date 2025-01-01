@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Foreign Key
-            $table->unsignedBigInteger('uploaded_by');
+            $table->unsignedBigInteger('uploaded_by')->nullable(); 
             $table->foreign('uploaded_by')->references('user_id')->on('users')->onDelete('cascade');
         });
     }
